@@ -1,15 +1,4 @@
 [avito]
-urls = [
-  "https://www.avito.ru/moskva/telefony/mobilnye_telefony/apple/iphone_15_1234567890",
-  "https://www.avito.ru/irkutsk/velosipedy/shosseynyy_velosiped_7942424641",
-  "https://www.avito.ru/irkutsk/produkty_pitaniya/travyanoy_med_dlya_energii_i_kontsentratsii_8077830778"
-]
-# мобильный прокси в формате login:password@ip:port или ip:port
 proxy_string = ""
-# ссылка, которую выдаёт провайдер мобильного прокси для смены IP
 proxy_change_url = ""
 max_count_of_retry = 5
-pause_between_links = 1
-one_time_start = true
-save_xlsx = true
-output_dir = "result"
