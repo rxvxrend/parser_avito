@@ -1,4 +1,4 @@
-from dto import AvitoConfig
+from ...dto import AvitoConfig
 from .proxy import MobileProxy, Proxy
 
 

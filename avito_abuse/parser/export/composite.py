@@ -1,7 +1,7 @@
 #from loguru import logger
 
-from dto import ParsedProduct
-from parser.export.base import ResultStorage
+from ...dto import ParsedProduct
+from .base import ResultStorage
 
 
 class CompositeResultStorage(ResultStorage):

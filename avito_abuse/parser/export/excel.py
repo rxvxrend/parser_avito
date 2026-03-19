@@ -3,8 +3,8 @@ from threading import Lock
 
 from openpyxl import Workbook, load_workbook
 
-from dto import ParsedProduct
-from parser.export.base import ResultStorage
+from ...dto import ParsedProduct
+from .base import ResultStorage
 
 
 class ExcelStorage(ResultStorage):
