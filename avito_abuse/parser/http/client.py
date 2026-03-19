@@ -5,7 +5,7 @@ import time
 from curl_cffi import requests
 #from loguru import logger
 
-from parser.proxies.proxy import Proxy
+from ..proxies.proxy import Proxy
 
 HEADERS = {
     "sec-ch-ua-platform": '"Windows"',

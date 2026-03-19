@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from dto import ParsedProduct
+from ...dto import ParsedProduct
 
 
 class ResultStorage(ABC):

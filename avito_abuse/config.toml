@@ -1,0 +1,4 @@
+[avito]
+proxy_string = ""
+proxy_change_url = ""
+max_count_of_retry = 5
