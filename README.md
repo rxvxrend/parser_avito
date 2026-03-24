@@ -4,6 +4,7 @@
 - `title`
 - `price`
 - `description`
+- `photos` (для Avito; список URL изображений)
 
 ## Использование
 
@@ -13,7 +14,7 @@ from base_parser import BaseParser
 parser = BaseParser("avito_abuse/config.toml")
 
 product = parser.parse_card("https://auto.ru/cars/used/sale/...")
-print(product.title, product.price, product.description)
+print(product.title, product.price, product.description, product.photos)
 ```
 
 ## Настройка `config.toml`

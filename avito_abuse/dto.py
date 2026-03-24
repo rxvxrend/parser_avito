@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from dataclasses import field
 
 
 @dataclass
@@ -14,3 +15,4 @@ class ParsedProduct:
     title: str
     price: str
     description: str
+    photos: list[str] = field(default_factory=list)
