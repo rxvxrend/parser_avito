@@ -1,6 +1,6 @@
-## Avito/Auto.ru Card Parser (минимальная сборка)
+## Avito/Auto.ru/Cian Card Parser (минимальная сборка)
 
-Парсер карточки Avito или Auto.ru, который принимает **одну ссылку извне** (из головного парсера), загружает страницу и возвращает:
+Парсер карточки Avito, Auto.ru или Cian, который принимает **одну ссылку извне** (из головного парсера), загружает страницу и возвращает:
 - `title`
 - `price`
 - `description`
@@ -13,7 +13,7 @@ from base_parser import BaseParser
 
 parser = BaseParser("avito_abuse/config.toml")
 
-product = parser.parse_card("https://auto.ru/cars/used/sale/...")
+product = parser.parse_card("https://cian.ru/sale/flat/...")
 print(product.title, product.price, product.description, product.photos)
 ```
 
