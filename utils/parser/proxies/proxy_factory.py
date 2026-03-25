@@ -1,8 +1,8 @@
-from ...dto import AvitoConfig
+from ...dto import ParserConfig
 from .proxy import MobileProxy, Proxy
 
 
-def build_proxy(config: AvitoConfig) -> Proxy:
+def build_proxy(config: ParserConfig) -> Proxy:
     """В проекте поддерживаются только мобильные прокси."""
     if not config.proxy_string or not config.proxy_change_url:
         raise ValueError(

@@ -1,4 +1,4 @@
-[avito]
+[parser]
 proxy_string = "Ed1CAa:KAk5kaVKEKVY@fproxy.site:15896"
 proxy_change_url = "https://changeip.mobileproxy.space/?proxy_key=4c3990b47b8cd66db2f4b40772aa5f72"
 max_count_of_retry = 5

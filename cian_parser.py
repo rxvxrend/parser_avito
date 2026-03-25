@@ -3,7 +3,7 @@ import json
 
 from bs4 import BeautifulSoup
 
-from avito_abuse.dto import ParsedProduct
+from utils.dto import ParsedProduct
 
 
 class CianParse:

@@ -3,14 +3,14 @@
 from auto_ru_parser import AutoRuParse
 from avito_parser import AvitoParse
 from cian_parser import CianParse
-from avito_abuse.load_config import load_avito_config
-from avito_abuse.parser.http.client import HttpClient
-from avito_abuse.parser.proxies.proxy_factory import build_proxy
+from utils.load_config import load_parser_config
+from utils.parser.http.client import HttpClient
+from utils.parser.proxies.proxy_factory import build_proxy
 
 
 class BaseParser:
-    def __init__(self, config_path: str = "avito_abuse/config.toml"):
-        self.config = load_avito_config(config_path)
+    def __init__(self, config_path: str = "utils/config.toml"):
+        self.config = load_parser_config(config_path)
         self.proxy = build_proxy(self.config)
         self.http = HttpClient(
             proxy=self.proxy,

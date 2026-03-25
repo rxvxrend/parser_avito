@@ -3,7 +3,7 @@ from dataclasses import field
 
 
 @dataclass
-class AvitoConfig:
+class ParserConfig:
     proxy_string: str
     proxy_change_url: str
     max_count_of_retry: int = 5
