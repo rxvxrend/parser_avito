@@ -6,6 +6,7 @@ from dataclasses import field
 class ParserConfig:
     proxy_string: str
     proxy_change_url: str
+    proxy_change_urls: list[str] = field(default_factory=list)
     max_count_of_retry: int = 5
 
 

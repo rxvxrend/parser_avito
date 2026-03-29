@@ -41,6 +41,7 @@ class HttpClient:
 
     def request(self, method: str, url: str, **kwargs):
         last_exc = None
+        last_status_code = None
 
         for attempt in range(1, self.max_retries + 1):
             try:
@@ -51,6 +52,14 @@ class HttpClient:
                         timeout=self.timeout,
                         allow_redirects=True,
                         **kwargs,
+                    )
+
+                last_status_code = response.status_code
+
+                if response.status_code == 407:
+                    raise RuntimeError(
+                        "Proxy authentication failed (HTTP 407). "
+                        "Проверьте proxy_string (логин/пароль/хост/порт)."
                     )
 
                 if response.status_code in (401, 403, 429):
@@ -76,4 +85,10 @@ class HttpClient:
                 #logger.warning(f"Request error (attempt {attempt}): {err}")
                 time.sleep(self.retry_delay)
 
-        raise RuntimeError("HTTP request failed after retries") from last_exc
+        details = []
+        if last_status_code is not None:
+            details.append(f"last_status={last_status_code}")
+        if last_exc is not None:
+            details.append(f"last_error={type(last_exc).__name__}: {last_exc}")
+        suffix = f" ({', '.join(details)})" if details else ""
+        raise RuntimeError(f"HTTP request failed after retries{suffix}") from last_exc

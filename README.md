@@ -20,7 +20,8 @@ print(product.title, product.price, product.description, product.photos)
 ## Настройка `config.toml`
 
 - `proxy_string` — мобильный прокси (`login:password@ip:port`).
-- `proxy_change_url` — URL смены IP мобильного прокси.
+- `proxy_change_url` — основной URL смены IP мобильного прокси.
+- `proxy_change_urls` — опциональный список URL (основной + резервные), которые будут пробоваться по очереди при смене IP.
 - `max_count_of_retry` — число повторов HTTP-запроса.
 
 Если `proxy_string` или `proxy_change_url` пустые — запуск завершится ошибкой.
